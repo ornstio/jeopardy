@@ -1,0 +1,25 @@
+<div class="open" *ngIf="isOpen"></div>
+<div #container class="flip-container" [ngClass]="{'correct' : question.status == 2, 'incorrect' : question.status == 1}" (click)="open($event,container)">
+  <div class="front">
+    <div *ngIf="question.status == 0">${{question.value}}</div>
+    <div class="answered-text" *ngIf="question.status != 0">
+      <div>{{question.title}}</div>
+      <div>A: {{getAnswer()}}</div>
+    </div>
+  </div>
+  <div class="back">
+    <div class="question-title">
+      {{question.title}}
+    </div>
+    <div class="answers">
+      <mat-grid-list cols="2" [gutterSize]="'16px'" rowHeight="calc(50% - 8px)">
+        <mat-grid-tile (click)="answer($event,container,a.id)" class="answer" *ngFor="let a of question.answers">
+          {{a.title}}
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+    <div class="actions alternate-theme">
+      <button mat-button color="primary" (click)="close($event,container)">CLOSE</button>
+    </div>
+  </div>
+</div>

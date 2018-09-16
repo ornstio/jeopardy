@@ -1,0 +1,120 @@
+@import '../../assets/theme.scss';
+
+.flip-container {
+    perspective: 1000px;
+    position: absolute;
+    flex: 1;
+    height: 100%;
+    width: 100%;
+}
+
+.answered-text{
+    font-size: 12px;
+    margin: 1rem;
+
+    div:last-child{
+        margin-top: 0.5rem;
+    }
+}
+
+.correct{
+    transition: 1s;
+    background: $primary;
+}
+
+.incorrect{
+    transition: 1s;
+    background: $alternate-primary;
+    color: $primary;
+}
+
+.flip-container.active {
+    transition: 1s;
+	transform-style: preserve-3d;
+    flex: 1;
+    transform: rotateY(180deg);
+    height: 50vh;
+    width: 50vw;
+    top: 25vh;
+    left: 25vw;
+    z-index: 10;
+}
+
+.flip-container {
+    display: flex;
+    flex: 1;
+}
+
+.back{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    border: 0.125rem $alternate-primary solid;
+    border-radius: 24px;
+
+    .question-title{
+        flex: 0;
+    }
+
+    .answers{
+        flex: 1;
+        margin: 1rem 0;
+
+        mat-grid-tile{
+            border: 0.125rem solid $alternate-primary;
+            background: $accent;
+            border-radius: 0.125rem;
+        }
+        mat-grid-tile:hover{
+            background: $alternate-primary;
+            color: $primary;
+            font-weight: 600;
+        }
+    }
+
+    .actions{
+        text-align: right;
+    }
+}
+
+.front {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+    left: 0;
+    border-radius: 0.5rem;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+    background: $primary;
+	transform: rotateY(180deg);
+}
+
+.open{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 9;
+    top: 0;
+    left: 0;
+}

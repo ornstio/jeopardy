@@ -1,0 +1,91 @@
+@import "../../assets/theme.scss";
+
+.board{
+    display: flex;
+    flex: 1;
+    margin: 1rem;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+    border-radius: 1rem;
+    .categories{
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+
+        .category-header{
+            background: $primary;
+            color: white;
+            font-size: 24px;
+            text-align: center;
+            min-height: 64px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .question{
+            overflow: hidden;
+            background: $accent;
+            color: $alternate-primary;
+            font-size: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .question:hover{
+            background: $primary;
+        }
+    }
+
+    .categories{
+        .category-header, .question {
+            border: 0.125rem solid white;
+            border-radius: .5rem;
+        }
+    }
+}
+
+.score-board{
+    border-radius: 0.5rem;
+    min-height: 64px;
+    background: $primary;
+    margin: -.875rem 1.125rem 1rem 1.125rem;
+    display: flex;
+    position: relative;
+
+    .spacer{
+        flex: 1;
+    }
+
+    .score-value, .score{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: white;
+        font-size: 24px;
+    }
+
+    .score{
+        margin: 0 1rem;
+    }
+
+    .actions{
+        flex-direction: column;
+        justify-content: center;
+        max-height: 2rem;
+        margin: auto 1rem;
+        button{
+            margin-left: 0.5rem;
+        }
+    }
+}
+
+.container{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}

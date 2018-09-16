@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@import './assets/theme.scss';
+
+html,body,app-root, app-login, app-jeopardy{
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+    background: #fafafa;
+}

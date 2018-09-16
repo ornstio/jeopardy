@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="board">
+      <div class="categories" *ngFor="let category of categories">
+        <div class="category-header">{{category.title}}</div>
+        <app-question (answered)="scored($event)" [question]="question" class="question" *ngFor="let question of category.questions"></app-question>
+      </div>
+    </div>
+    <div class="score-board">
+      <div class="score">Score: {{score}}</div>
+      <div class="score-value" [@fadeInOut] *ngIf="questionValue">{{questionValue}}</div>
+      <div class="spacer"></div>
+      <div class="actions alternate-theme">
+          <button mat-raised-button color="primary" (click)="reset()">RESET</button>
+          <button mat-raised-button color="primary" (click)="shuffle()">SHUFFLE</button>
+      </div>
+    </div>
+  </div>
