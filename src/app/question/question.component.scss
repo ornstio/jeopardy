@@ -9,7 +9,7 @@
 }
 
 .answered-text{
-    font-size: 12px;
+    font-size: 0.625rem;
     margin: 1rem;
 
     div:last-child{
@@ -52,7 +52,7 @@
     height: 100%;
     padding: 1rem;
     border: 0.125rem $alternate-primary solid;
-    border-radius: 24px;
+    border-radius: 1.5rem;
 
     .question-title{
         flex: 0;
@@ -66,6 +66,7 @@
             border: 0.125rem solid $alternate-primary;
             background: $accent;
             border-radius: 0.125rem;
+            font-size: 0.8125rem;
         }
         mat-grid-tile:hover{
             background: $alternate-primary;

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Status } from '../categories';
+import { Status } from '../categories/status';
 
 @Component({
   selector: 'app-question',

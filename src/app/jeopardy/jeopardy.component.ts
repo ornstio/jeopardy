@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Categories, Status } from '../categories';
+import { Categories } from '../categories/categories';
 import * as _ from 'underscore';
 import { trigger, state, style, animate, transition, keyframes } from '@angular/animations';
+import { Status } from '../categories/status';
 
 @Component({
   selector: 'app-jeopardy',
